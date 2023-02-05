@@ -1,8 +1,10 @@
 const { randomBytes } = await import('node:crypto')
 
-export const serializeNonPOJOs = (obj) => {
-    return structuredClone(obj);
-}
+export const serializeNonPOJOs = (objectToClone) =>  {
+        const stringified = JSON.stringify(objectToClone);
+        const parsed = JSON.parse(stringified);
+        return parsed;
+    }
 
 export const generateUsername = (name) => {
     const id = randomBytes(2).toString('hex')
