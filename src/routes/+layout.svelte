@@ -1,6 +1,7 @@
 <script>
   import "../app.postcss";
   export let data
+  console.log(data)
 </script>
 
 <div class="min-h-full">
@@ -51,6 +52,11 @@
 </div>
 <div class="py-10">
   <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+    {#if data.user}
+      <pre>
+        Welcome {data.user.name}
+      </pre>
+    {/if}
     <slot />
   </div>
 </div>
